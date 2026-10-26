@@ -21,7 +21,9 @@ public class FileUploadController {
     private final String uploadDir = "uploads/";
 
     @PostMapping("/upload")
-    public Map<String, String> uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
+    public Map<String, String> uploadFile(
+            @RequestParam("file")MultipartFile file
+    ) throws IOException {
 
         // 1. uploadDir papkasi mavjudligini tekshiring, bo'lmasa yarating
         Files.createDirectories(Paths.get(uploadDir));
